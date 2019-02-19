@@ -45,28 +45,79 @@
 // }
 // expected output array[4,5,9,13,18]
 // ---------------------------------------------------------------------------------------
-let array = [18,5,9,13,4];
-let counter = 0;
-let flag;
-let c = 0;
-console.log(array);
-do{
-	flag = false;
-	for(let x=0;x<array.length-c; x++){
-		counter++;
-		if(array[x] > array[x+1]){
-			let temp = array[x];
-			array[x] = array[x+1];
-			array[x+1] = temp;
-			console.log(array);
-			flag = true;
-		}
-	}
-	c = c+1;
-}while(flag)
-console.log(counter);
+// let array = [18,5,9,13,4];
+// let counter = 0;
+// let flag;
+// let c = 0;
+// console.log(array);
+// do{
+// 	flag = false;
+// 	for(let x=0;x<array.length-c; x++){
+// 		counter++;
+// 		if(array[x] > array[x+1]){
+// 			let temp = array[x];
+// 			array[x] = array[x+1];
+// 			array[x+1] = temp;
+// 			console.log(array);
+// 			flag = true;
+// 		}
+// 	}
+// 	c = c+1;
+// }while(flag)
+// console.log(counter);
 // bubble sorting
 // ---------------------------------------------------------------------------------------
+// function factorial(input){
+// 	if(input > 1)
+// 	{
+// 		return input * factorial(input-1);
+// 	}
+// 	else{
+// 		return input;
+// 	}
+// }
+// console.log(factorial(5));
+// expected output: factorial of 5 which is equal to = 5 * 4 * 3 * 2 * 1
+// recursion
+// -----------------------------------------------------------------------------------------
+// function isPalindrome(string){
+// 	if (string.length < 2){
+// 		return 'string is palindrome';
+// 	}
+// 	if(string[0] == string[string.length - 1]){
+// 	  return isPalindrome(string.slice(1,-1));
+// 	}
+// 	else{
+// 		return 'string is not a palindrome';
+// 	}	
+// console.log(isPalindrome('racecar'));
+// expected output: to check if the string is palindrome or not
+// ------------------------------------------------------------------------------------------
+// let counter = 0;
+// function bubbleSort(array, c = 1){
+// 	let flag = false;
+// 	for(let x = 0; x < array.length-c; x++){
+// 		counter++;
+// 		if(array[x] > array[x+1]){
+// 			let temp = array[x];
+// 			array[x] = array[x+1];
+// 			array[x+1] = temp;
+// 			console.log(array);
+// 			flag = true;
+// 		}
+// 	}
+	
+// 	if(flag){
+// 	 c++;
+// 	 return bubbleSort(array,c);
+// 	}
+// 	return counter;
+// }
+// let array = [8,3,10,1,6,14];
+// console.log(bubbleSort(array));
+// console.log(counter);
+// -----------------------------------------------------------------------------------------
+
 </script>
 </body>
 </html>
