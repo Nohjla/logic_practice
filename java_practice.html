@@ -117,7 +117,103 @@
 // console.log(bubbleSort(array));
 // console.log(counter);
 // -----------------------------------------------------------------------------------------
+// let Node = function(value){
+// 	this.value = value;
+// 	this.next = undefined;
+// }
+// let LinkedList = function(){
+// 	this.head = undefined;
+// 	this.length = 0;
+// 	this.push = function(Node){
+// 		if(this.head === undefined){
+// 			this.head = Node;
+// 			this.length++;
+// 			return;
+// 		}
+// 		let currentNode = this.head;
+// 		while(currentNode.next !== undefined){
+// 			currentNode = currentNode.next;
+// 		}
+// 		currentNode.next = Node;
+// 	}
+// 	this.unshift = function(node){
+// 		if(this.head === undefined){
+// 			this.head = Node;
+// 			this.length++;
+// 			return node;
+// 		}
+// 		this.length++;
+// 		node.next = this.head;
+// 		this.head = node;
+// 	}
+// 	this.shift = function(){
+// 		if(this.head === undefined){
+// 			return	'there are no more elements to shift';
+// 		}
+// 		else{
+// 		let oldHead = this.head;
+// 		this.head = this.head.next;
+// 		this.length--;
+// 		return oldHead;
+// 		}
+// 	}
+// 	this.display = function(){
+// 		let currentNode = this.head;
+// 		let result = this.length + ' ';
+// 		while(currentNode !== undefined){
+// 			result += currentNode.value + ' ';
+// 			currentNode = currentNode.next;
+// 		}
+// 		console.log(result);
+// 	}
+	 
+	
+// }
+// let pets = new LinkedList();
+// let cat = new Node('cat');
+// pets.push(cat);
+// pets.display();
+// let dog = new Node('dog');
+// pets.push(dog);
+// pets.display();
+// let fish = new Node('fish');
+// pets.unshift(fish);
+// pets.display();
+// let parrot = new Node('parrot');
+// pets.unshift(parrot);
+// pets.shift();
+// pets.display();
+// console.log(pets);
 
+let Node = function(value){
+	this.value = value;
+	this.left = undefined;
+	this.right = undefined;
+	this.insert = function(value){
+		if(value < this.value){
+			if(this.left === undefined){
+				this.left = new Node(value);
+			}
+			else{
+				this.insert(value);
+			}
+		}else if( value > this.value){
+			if(this.right === undefined){
+				this.right = new Node(value);
+			}
+			else{
+				this.insert(value);
+			}
+		}
+		return value;
+	}
+}
+let rootNode = new Node(8);
+rootNode.insert(3);
+rootNode.insert(8);
+rootNode.insert(7);
+rootNode.insert(9);
 </script>
 </body>
 </html>
+
