@@ -219,8 +219,22 @@ let Node = function(value){
 	}
 	this.preOrder = function(){
 		console.log(this.value);
-		console.log(this.left.value);
-		console.log(this.right.value);
+		if(this.left !== undefined){
+			this.left.preOrder();
+		}
+		if(this.right !== undefined){
+			this.right.preOrder();
+		}
+		
+	}
+	this.postOrder = function(){
+		if(this.left !== undefined){
+			this.left.postOrder();
+		}
+		if(this.right !== undefined){
+			this.right.postOrder();
+		}
+		console.log(this.value);
 	}
 }
 let rootNode = new Node(8);
@@ -228,7 +242,7 @@ rootNode.insert(3);
 rootNode.insert(7);
 rootNode.insert(10);
 rootNode.insert(9);
-rootNode.preOrder();
+rootNode.postOrder();
 </script>
 </body>
 </html>
