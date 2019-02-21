@@ -195,24 +195,40 @@ let Node = function(value){
 				this.left = new Node(value);
 			}
 			else{
-				this.insert(value);
+				this.left.insert(value);
 			}
 		}else if( value > this.value){
 			if(this.right === undefined){
 				this.right = new Node(value);
 			}
 			else{
-				this.insert(value);
+				this.right.insert(value);
+				
 			}
 		}
 		return value;
 	}
+	this.inOrder = function(){
+		if(this.left !== undefined){
+			this.left.inOrder();
+		}
+		console.log(this.value);
+		if(this.right !== undefined){
+			this.right.inOrder();
+		}
+	}
+	this.preOrder = function(){
+		console.log(this.value);
+		console.log(this.left.value);
+		console.log(this.right.value);
+	}
 }
 let rootNode = new Node(8);
 rootNode.insert(3);
-rootNode.insert(8);
 rootNode.insert(7);
+rootNode.insert(10);
 rootNode.insert(9);
+rootNode.preOrder();
 </script>
 </body>
 </html>
